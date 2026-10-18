@@ -161,8 +161,9 @@ def logout():
     flash("Вы успешно вышли из системы", "success")
     return redirect(url_for("login"))
 
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     import os
     port = int(os.environ.get('PORT', 5000))
     app.run(debug=False, host='0.0.0.0', port=port)
